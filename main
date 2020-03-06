@@ -6,14 +6,21 @@ public class Main {
 
 
 
-int neOkudu = authorsAndLiterature( "fethi", 100, 3, 4, 6,1,
-                                     5,9,2,1);
-sonuc("fethi", neOkudu);
+String WhatLiterature = authorsAndLiterature(1,2,3,
+        4,5,6,
+        7,8,9);
+printIt("fethi" , WhatLiterature);
 
-authorsAndLiterature("hilal", 15,13,15,17,12,
-        37,8,22,16);
-sonuc ( "hilal" , neOkudu);
+         WhatLiterature = authorsAndLiterature(6,1,1,
+                9,5,6,
+                2,0,0);
+        printIt("Hilal" , WhatLiterature);
 
+
+        WhatLiterature = authorsAndLiterature(10,15,15,
+                9,5,6,
+                2,0,0);
+        printIt("Yusuf" , WhatLiterature);
 
 
 
@@ -23,14 +30,15 @@ sonuc ( "hilal" , neOkudu);
     }
 
 
-    public static void sonuc  (String student, int whatLiterature) {
+    public static void printIt  (String student, String whatLiterature) {
+
 
         System.out.println(student + " en cok " + whatLiterature + " okudu.");
 
 
     }
 
-    public static int authorsAndLiterature (String student, int dostoyevski , int tolstoy, int gogol,
+    public static String authorsAndLiterature (int dostoyevski , int tolstoy, int gogol,
                                               int saitFaik, int sabahttinAli , int peyamiSafa,
                                               int coelho, int neruda, int marquez) {
 
@@ -39,13 +47,13 @@ sonuc ( "hilal" , neOkudu);
         int latin = coelho + neruda + marquez;
 
         if ((russian >= turkish) && (russian >= latin) ) {
-            return russian;
+            return "russian";
         } else if ( ( latin >= turkish) && (latin > russian)){
-            return latin;
+            return "latin" ;
         } else if (( turkish > russian) && (turkish > latin)) {
-            return turkish;
+            return "turkish";
         } else {
-            return -1;
+            return "-1";
 
         }
 
